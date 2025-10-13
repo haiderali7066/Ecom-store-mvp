@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".", // 👈 This tells Next.js the project root
+    "baseUrl": "src/app", // 👈 Point to your "src/app" folder
     "paths": {
-      "@/*": ["./src/*"] // 👈 This maps "@" to your "src" folder
+      "@/*": ["*"] // 👈 Now "@/lib/connect" points to src/app/lib/connect.js
     }
   }
 }
