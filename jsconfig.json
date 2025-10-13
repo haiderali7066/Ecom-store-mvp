@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // 👈 This tells Next.js the project root
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // 👈 This maps "@" to your "src" folder
     }
   }
 }
