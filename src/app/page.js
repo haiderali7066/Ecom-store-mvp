@@ -6,11 +6,20 @@ export default function HomePage() {
   const categories = [
     {
       title: "Muslim",
-      img: "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140,2000%7C61tGSs8mMOL.png%7C0,0,2140,2000%200.0,0.0,2140.0,2000.0_AC_SL1500_.png",
+      img: "https://i.pinimg.com/736x/0c/1a/d7/0c1ad796e8c3ead76ca571af046cf00b.jpg",
     },
-    { title: "Trending", img: "/images/trending.jpg" },
-    { title: "Fanbase", img: "/images/fanbase.jpg" },
-    { title: "Motivational", img: "/images/motivational.jpg" },
+    {
+      title: "Trending",
+      img: "https://img.joomcdn.net/3a214f374838fdc4a04ce65a9df042fd8e4e75cf_original.jpeg",
+    },
+    {
+      title: "Fanbase",
+      img: "https://images.meesho.com/images/products/330637171/1bxzr_512.jpg",
+    },
+    {
+      title: "Motivational",
+      img: "https://images-eu.ssl-images-amazon.com/images/I/61ziL3rbnrL._AC_UL600_SR600,600_.jpg",
+    },
   ];
 
   return (
@@ -44,7 +53,7 @@ export default function HomePage() {
 
           <div className="flex-1 mt-10 md:mt-0">
             <Image
-              src="https://img.drz.lazcdn.com/static/pk/p/0e8fa5a0e1540a1f59802393b31e881f.jpg_720x720q80.jpg"
+              src="https://tshirtmalli.lk/cdn/shop/files/mkluffy-t-shirt-sri-lanka-black.webp?v=1742066475&width=533"
               alt="Hero Shirt"
               width={600}
               height={500}
