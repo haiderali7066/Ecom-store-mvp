@@ -24,7 +24,7 @@ export default function Navbar() {
           href="/"
           className="text-3xl font-extrabold tracking-tight text-gray-900 hover:text-blue-600 transition"
         >
-          Cotton<span className="text-[#eebb70]">Core</span>
+          Next<span className="text-blue-600">Store</span>
         </Link>
 
         {/* 🧭 Desktop Navigation */}

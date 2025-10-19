@@ -7,7 +7,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Logo + Description */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-3">CottonCore</h2>
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Next<span className="text-blue-600">Store</span>
+          </h2>
           <p className="text-gray-400 text-sm leading-relaxed">
             Your go-to store for premium quality T-shirts and apparel. Trendy
             designs, great prices, fast delivery.
@@ -86,8 +88,9 @@ export default function Footer() {
             Get in Touch
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>Email: support@shopnext.com</li>
-            <li>Phone: +92 300 1234567</li>
+            <li>Email: support@cottoncore.com</li>
+            <li>Phone: +92 325 6036838</li>
+            <li>Instagram: @cottoncore.store</li>
           </ul>
 
           <div className="flex gap-4 mt-4">
