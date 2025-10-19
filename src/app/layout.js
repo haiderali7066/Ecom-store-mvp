@@ -11,14 +11,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-50 text-gray-900">
-        {/* Wrap the entire app in AuthProvider */}
+      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+        {/* AuthProvider wraps everything */}
         <AuthProvider>
           <Navbar />
-          
-          <main className="max-w-6xl mx-auto p-6">{children}</main>
+
+          {/* Responsive main container */}
+          <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+            {children}
+          </main>
+
+          <Footer />
         </AuthProvider>
-        <Footer />
       </body>
     </html>
   );

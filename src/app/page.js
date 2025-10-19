@@ -24,18 +24,20 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-8 py-20">
-          <div className="flex-1">
-            <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center px-4 sm:px-6 md:px-8 py-12 md:py-20 gap-10">
+          {/* Left: Text */}
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
               Elevate Your <span className="text-blue-600">Street Style</span>
             </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-md">
+            <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-md mx-auto md:mx-0">
               Premium oversized and regular tees crafted for comfort, culture,
               and confidence.
             </p>
-            <div className="mt-6 flex gap-4">
+
+            <div className="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
               <Link
                 href="/products"
                 className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
@@ -51,25 +53,26 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex-1 mt-10 md:mt-0">
+          {/* Right: Hero Image */}
+          <div className="flex-1 flex justify-center">
             <Image
               src="https://tshirtmalli.lk/cdn/shop/files/mkluffy-t-shirt-sri-lanka-black.webp?v=1742066475&width=533"
               alt="Hero Shirt"
               width={600}
               height={500}
-              className="rounded-2xl shadow-lg object-cover"
+              className="rounded-2xl shadow-lg object-cover w-[85%] sm:w-[70%] md:w-full"
               unoptimized
             />
           </div>
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="max-w-7xl mx-auto px-8 py-16">
-        <h2 className="text-3xl font-bold mb-10 text-center">
+      {/* Categories Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-16">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
           Shop by Category
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
           {categories.map((cat) => (
             <Link
               key={cat.title}
@@ -81,11 +84,11 @@ export default function HomePage() {
                 alt={cat.title}
                 width={400}
                 height={300}
-                className="object-cover w-full h-56 group-hover:scale-105 transition-transform duration-500"
+                className="object-cover w-full h-40 sm:h-52 md:h-56 group-hover:scale-105 transition-transform duration-500"
                 unoptimized
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">
+                <span className="text-white text-base sm:text-lg font-semibold">
                   {cat.title}
                 </span>
               </div>
@@ -94,9 +97,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="max-w-7xl mx-auto px-8 py-16">
-        <h2 className="text-3xl font-bold mb-10 text-center">
+      {/* Featured Products Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-16">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
           Featured Products
         </h2>
         <HomeProducts />
