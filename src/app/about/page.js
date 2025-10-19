@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-16">
       <h1 className="text-4xl font-extrabold mb-6 text-center text-gray-900">
-        About Cotton Core
+        About Next Store
       </h1>
       <p className="text-gray-600 text-center mb-12">
         Discover how our modern streetwear store operates and how you can easily
@@ -20,10 +20,10 @@ export default function AboutPage() {
       <div className="space-y-8 text-gray-700 leading-relaxed">
         <div>
           <h2 className="text-2xl font-semibold mb-2 text-blue-600">
-            🛍 What Cotton Core Is
+            🛍 What Next Store Is
           </h2>
           <p>
-            Cotton Core is a stylish online clothing store built with the MERN
+            Next Store is a stylish online clothing store built with the MERN
             stack and Next.js. We specialize in premium{" "}
             <strong>oversized and regular printed tees</strong> crafted for
             comfort, culture, and confidence. Our goal is to bring high-quality
