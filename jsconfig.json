@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/app", // 👈 Point to your "src/app" folder
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"] // 👈 Now "@/lib/connect" points to src/app/lib/connect.js
+      "@/*": ["src/*"]
     }
   }
 }

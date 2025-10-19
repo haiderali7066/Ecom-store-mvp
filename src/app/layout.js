@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { AuthProvider } from "../app/context/AuthContext";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Ecom Store",
@@ -14,8 +15,10 @@ export default function RootLayout({ children }) {
         {/* Wrap the entire app in AuthProvider */}
         <AuthProvider>
           <Navbar />
+          
           <main className="max-w-6xl mx-auto p-6">{children}</main>
         </AuthProvider>
+        <Footer />
       </body>
     </html>
   );

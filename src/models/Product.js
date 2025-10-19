@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    name: String,
     description: String,
-    price: { type: Number, required: true },
+    price: Number,
+    image: String,
+    category: String,
+    featured: { type: Boolean, default: false }, // 👈 add this
     stock: { type: Number, default: 100 },
-    image: String, // ✅ add image
-    category: String, // ✅ add category
   },
   { timestamps: true }
 );

@@ -1,39 +1,97 @@
-// app/page.js
-import ProductCard from "@/components/ProductCard";
+import Image from "next/image";
+import Link from "next/link";
+import HomeProducts from "@/components/HomeProducts";
 
-async function getProducts() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-
-  const res = await fetch(`${baseUrl}/api/products`, { cache: "no-store" });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-
-  return res.json();
-}
-
-export default async function HomePage() {
-  const products = await getProducts();
+export default function HomePage() {
+  const categories = [
+    {
+      title: "Muslim",
+      img: "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140,2000%7C61tGSs8mMOL.png%7C0,0,2140,2000%200.0,0.0,2140.0,2000.0_AC_SL1500_.png",
+    },
+    { title: "Trending", img: "/images/trending.jpg" },
+    { title: "Fanbase", img: "/images/fanbase.jpg" },
+    { title: "Motivational", img: "/images/motivational.jpg" },
+  ];
 
   return (
-    <section className="p-8">
-      <header className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-        <div>
-          <h1 className="text-4xl font-bold">ShopNext — Modern Store</h1>
-          <p className="mt-2 text-gray-600">
-            Clean UI, simple flows — place orders without payments.
-          </p>
+    <main className="min-h-screen">
+      {/* Hero */}
+      <section className="relative bg-gradient-to-r from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-8 py-20">
+          <div className="flex-1">
+            <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+              Elevate Your <span className="text-blue-600">Street Style</span>
+            </h1>
+            <p className="mt-4 text-lg text-gray-600 max-w-md">
+              Premium oversized and regular tees crafted for comfort, culture,
+              and confidence.
+            </p>
+            <div className="mt-6 flex gap-4">
+              <Link
+                href="/products"
+                className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+              >
+                Shop Now
+              </Link>
+              <Link
+                href="/about"
+                className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition"
+              >
+                Explore
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex-1 mt-10 md:mt-0">
+            <Image
+              src="https://www.inkfactory.pk/wp-content/uploads/2019/08/T-Shirt-Mockup-0016.jpg"
+              alt="Hero Shirt"
+              width={600}
+              height={500}
+              className="rounded-2xl shadow-lg object-cover"
+              unoptimized
+            />
+          </div>
         </div>
-      </header>
+      </section>
 
-      <h2 className="text-2xl font-semibold mb-4">Featured Products</h2>
+      {/* Categories */}
+      <section className="max-w-7xl mx-auto px-8 py-16">
+        <h2 className="text-3xl font-bold mb-10 text-center">
+          Shop by Category
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {categories.map((cat) => (
+            <Link
+              key={cat.title}
+              href={`/products?category=${encodeURIComponent(cat.title)}`}
+              className="relative group overflow-hidden rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <Image
+                src={cat.img}
+                alt={cat.title}
+                width={400}
+                height={300}
+                className="object-cover w-full h-56 group-hover:scale-105 transition-transform duration-500"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold">
+                  {cat.title}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products?.map((p) => (
-          <ProductCard key={p._id} product={p} />
-        ))}
-      </div>
-    </section>
+      {/* Featured Products */}
+      <section className="max-w-7xl mx-auto px-8 py-16">
+        <h2 className="text-3xl font-bold mb-10 text-center">
+          Featured Products
+        </h2>
+        <HomeProducts />
+      </section>
+    </main>
   );
 }
