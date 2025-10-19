@@ -44,7 +44,7 @@ export default function HomePage() {
 
           <div className="flex-1 mt-10 md:mt-0">
             <Image
-              src="https://www.inkfactory.pk/wp-content/uploads/2019/08/T-Shirt-Mockup-0016.jpg"
+              src="https://img.drz.lazcdn.com/static/pk/p/0e8fa5a0e1540a1f59802393b31e881f.jpg_720x720q80.jpg"
               alt="Hero Shirt"
               width={600}
               height={500}
