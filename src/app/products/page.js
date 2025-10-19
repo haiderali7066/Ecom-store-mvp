@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
 
-export default function ProductsPage() {
+function ProductsContent() {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
@@ -25,7 +26,6 @@ export default function ProductsPage() {
     fetchProducts();
   }, []);
 
-  // Filter when category in URL changes
   useEffect(() => {
     if (!categoryFromUrl || categoryFromUrl === "All") {
       setFiltered(products);
@@ -83,5 +83,15 @@ export default function ProductsPage() {
         </div>
       )}
     </section>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense
+      fallback={<div className="p-6 text-center">Loading products...</div>}
+    >
+      <ProductsContent />
+    </Suspense>
   );
 }
