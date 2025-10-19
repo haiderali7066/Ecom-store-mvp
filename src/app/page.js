@@ -30,7 +30,7 @@ export default function HomePage() {
           {/* Left: Text */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Elevate Your <span className="text-blue-600">Street Style</span>
+              Elevate Your <span className="text-[#eebb70]">Street Style</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-md mx-auto md:mx-0">
               Premium oversized and regular tees crafted for comfort, culture,
